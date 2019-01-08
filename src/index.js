@@ -1,14 +1,8 @@
 import React from 'react';
-import { render } from 'react-dom'; 
-import Media from './playlist/components/media';
+import { render } from 'react-dom';
+import PlayList from './playlist/components/playlist';
+import data from './api.json';
 
 const app = document.getElementById('app');
 
-render(
-<Media
-    title="¿Que es HTML5?"
-    author="@javiernuber"
-    image="./images/covers/html5.jpg"
-    type='video'
-/>
-, app);
+render(<PlayList data={data}/>, app);

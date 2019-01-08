@@ -2,12 +2,22 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import "./media.css";
 class Media extends Component {
+    state = {
+        author: 'Javi'
+    }
+
+    handleClick = (event) => {
+        this.setState({
+            author: 'Pepe'
+        })
+    }
+
     render(){
         return (
-            <div className="Media">
+            <div className="Media" onClick={this.handleClick}>
                 <div className="Media-cover">
                     <img
-                        src={this.props.image}
+                        src={this.props.cover}
                         alt=""
                         width={260}
                         height={160}
@@ -22,7 +32,7 @@ class Media extends Component {
 }
 
 Media.propTypes = {
-    image: PropTypes.string,
+    cover: PropTypes.string,
     title: PropTypes.string.isRequired,
     author: PropTypes.string,
     type: PropTypes.oneOf(['video', 'audio'])
