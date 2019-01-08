@@ -1,20 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import "./media.css";
-class Media extends Component {
-    state = {
-        author: 'Javi'
-    }
-
-    handleClick = (event) => {
-        this.setState({
-            author: 'Pepe'
-        })
-    }
-
+class Media extends PureComponent {
     render(){
         return (
-            <div className="Media" onClick={this.handleClick}>
+            <div className="Media">
                 <div className="Media-cover">
                     <img
                         src={this.props.cover}
