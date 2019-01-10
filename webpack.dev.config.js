@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   entry: {
-    app: path.resolve(__dirname, 'src/index.js'),
+    home: path.resolve(__dirname, 'src/entries/home.js')
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -21,7 +21,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              '@babel/preset-env', 
+              '@babel/preset-env',
               '@babel/preset-react',
               {
                 plugins: [

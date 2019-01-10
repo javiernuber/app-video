@@ -5,7 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = (env) => {
   let mode = 'development';
   const plugins = [
-    new MiniCssExtractPlugin({filename: "css/[name].css"}),   
+    new MiniCssExtractPlugin({filename: "css/[name].css"}),
   ]
 
   if (env && env.NODE_ENV === 'production') {
@@ -18,7 +18,7 @@ module.exports = (env) => {
   return {
     mode: mode,
     entry: {
-      app: path.resolve(__dirname, 'src/index.js'),
+      home: path.resolve(__dirname, 'src/entries/home.js')
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -35,7 +35,7 @@ module.exports = (env) => {
             loader: 'babel-loader',
             options: {
               presets: [
-                '@babel/preset-env', 
+                '@babel/preset-env',
                 '@babel/preset-react',
                 {
                   plugins: [
